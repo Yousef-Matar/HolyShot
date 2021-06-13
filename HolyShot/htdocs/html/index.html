@@ -1,0 +1,59 @@
+<?php
+session_start(); 
+?>
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Holy Shot</title>
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="../css/normalize.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <script src="../js/scripts.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+
+    <body>
+        <?php include('header.php'); ?>
+
+        <div class="grid-container">
+            <div style="z-index: -1" class="main_body">
+                <img class="bann" style="max-width: 50%" src="../img/unnamed.png" alt="doctor image">
+                <hr id="special">
+                <div class="container">
+
+                    <div class="cards">
+                        <p>Compare, look, select, and book.</p>
+                        <p> Track your appointments as you please, and take your 7o2na with ease.</p>
+                        <a id="contact_button" href="../html/login.html">Book Now</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="side_bar">
+                <h1 class="page_title">Why Visit Holy Shot?</h1>
+                <span class="fa fa-user-md"> </span>
+                <h5>Top Consultants</h5>
+                <p>A team of leading experts in more than 30 medical specialty for all your family’s integrated healthcare needs.</p>
+                <span class="fa fa-medkit"> </span>
+                <h5>Quality Care</h5>
+                <p>Putting back the care in healthcare with a highly trained professional staff, an appointment system that values your time and a commitment to quality of service.</p>
+                <span class="fa fa-heartbeat"> </span>
+                <h5>Unique Services</h5>
+                <p>Specialized medical services with the latest cutting- edge equipment including laser therapy, nutritional therapy, cosmetology, ultrasound and more.</p>
+
+            </div>
+        </div>
+
+        <?php include('footer.php'); ?>
+
+
+    </body>
+
+</html>

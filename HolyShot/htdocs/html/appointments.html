@@ -1,0 +1,83 @@
+<?php
+session_start(); 
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Book Appointments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/scripts.js"></script>
+    <meta charset="utf-8" />
+    <title>Footer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <?php include('header.php'); ?>
+
+    <div class="appointment-container">
+      <div class="left-container">
+        <h2 class="heading">Book Medical Appointment</h2>
+        <h3>Get Treated By The Best Doctors</h3>
+        <p>Available everyday for you to get better</p>
+      </div>
+      <div class="right-container" id="appForm">
+        <form
+          class="appointmentForm"
+          onsubmit="return validateForm(document.getElementById('appForm').id)"
+          method="post";
+          action="appointments.php"
+        >
+          <h2 class="heading">Online Reservation</h2>
+
+          <div class="appointmentform-field">
+            <p>Appointment Date</p>
+            <input type="date" id="appDate" name="appDate" required />
+          </div>
+
+          <div class="appointmentform-field">
+            <p>Appointment Time</p>
+            <input type="time" id="appTime" name="appTime" required />
+          </div>
+
+          <div class="appointmentform-field">
+            <p>Doctor Specilization</p>
+            <select
+              id="doctorSpecilization"
+              name="doctorSpecilization"
+            >
+              <option value="Dentist">Dentist</option>
+              <option value="Cardiologist">Cardiologist</option>
+              <option value="Dermatologist">Dermatologist</option>
+              <option value="Neurologist">Neurologist</option>
+            </select>
+          </div>
+
+          <div class="middle-btn">
+            <button class="lrg-green-btn" id="confirmApp">Confirm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <?php include('footer.php'); ?>
+
+  </body>
+</html>

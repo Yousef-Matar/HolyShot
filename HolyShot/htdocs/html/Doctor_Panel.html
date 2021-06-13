@@ -1,0 +1,125 @@
+<?php
+session_start(); 
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Doctor Panel</title>
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/scripts.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="greeting-grid-layout">
+        <div class="greeting-grid-left">
+          <h4>Welcome <?php echo $_SESSION['username']; ?></h4>
+        </div>
+        <div class="greeting-grid-right">
+          <button class="lrg-red-btn" type="button" onclick="location.href = 'logout.php';" >
+            Log Out <i class="fa fa-sign-out"></i>
+          </button>
+        </div>
+      </div>
+      <div class="cards-grid-layout">
+        <div class="quickstats">
+         
+        </div>
+
+        <div class="left-card">
+          <ul class="list-style">
+            <li class="list-content">
+              <i class="fa fa-calendar"></i>
+            </li>
+            <li class="list-content">View schedule.</li>
+            <li class="list-content">
+              <a href="ViewSchedule.php" target="_blank"
+                ><button
+                  class="lrg-green-btn"
+                  type="button"
+                 
+                >
+                  View
+                </button></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="middle-card">
+          <ul class="list-style">
+            <li class="list-content">
+              <i class="fa fa-hospital-o"></i>
+              <i class="fa fa-user"></i>
+            </li>
+            <li class="list-content">View my patients.</li>
+            <li class="list-content">
+              <a href="Patients_Information.php" target="_blank"
+                ><button class="lrg-green-btn" type="button">View</button></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="right-card">
+          <ul class="list-style">
+            <li class="list-content">
+              <i class="fa fa-key"></i>
+            </li>
+            <li class="list-content">Change password.</li>
+            <li class="list-content">
+              <button
+                class="lrg-green-btn"
+                onclick="formtoggle(document.getElementById('DoctorPasswordForm').id)"
+              >
+                Change
+              </button>
+            </li>
+            <li>
+              <div class="form-popup" id="DoctorPasswordForm">
+                <form
+                  class="form-container"
+                  onsubmit="return validateForm(document.getElementById('DoctorPasswordForm').id)"
+                  method="POST"
+                  action="changepsw.php"
+                >
+                
+
+                  <label for="newpsw">New Password</label>
+                  <input
+                    type="password"
+                    placeholder="Enter the new Password"
+                    name="newpsw"
+                    required
+                  />
+
+                  <button
+                    class="lrg-green-btn"
+                    type="submit"
+                    class="submit-btn"
+                  >
+                    Confirm
+                  </button>
+                  <button
+                    type="button"
+                    class="lrg-red-btn"
+                    onclick="formtoggle(document.getElementById('DoctorPasswordForm').id)"
+                  >
+                    Close
+                  </button>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

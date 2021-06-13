@@ -1,0 +1,122 @@
+<?php
+session_start(); 
+
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Profile Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/scripts.js"></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <meta charset="utf-8" />
+    <title>Footer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body onload="tabs(event, 'tab0')">
+    <?php include('header.php'); ?>
+
+    <div class="greeting-grid-layout">
+      <div class="greeting-grid-left">
+      <h4>Welcome <?php echo $_SESSION['username']; ?></h4>
+      </div>
+      <div class="greeting-grid-right"></div>
+    </div>
+    <div class="cards-grid-layout">
+
+    </div>
+    <div class="containerProfile">
+      <div class="tab">
+        <button class="tablinks" onclick="tabs(event, 'tab0')">
+          <i class="fa fa-user"></i>
+        </button>
+        <button class="tablinks" onclick="tabs(event, 'tab1')">
+          <i class="fa fa-tasks"></i>
+        </button>
+        <button class="tablinks" onclick="tabs(event, 'tab2')">
+          <i class="fa fa-cog"></i>
+        </button>
+      </div>
+
+      <!-- Tab content -->
+      <div id="tab0" class="tabcontent">
+        <form
+          onsubmit="return validateForm(document.getElementById('tab0').id)"
+          action="profilepage.php" method="POST"
+        >
+          <h1 class="profileh1">Personal Information</h1>
+          <h2 class="profileh2">Full Name</h2>
+          <input
+            type="text"
+            name="fname"
+            placeholder="Enter your Full name"
+            class="in"
+            required;
+          />
+          <h2 class="profileh2">Email</h2>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            class="in"
+            required;
+            
+          />
+          <h2 class="profileh2">Password</h2>
+          <input
+            type="password"
+            name="newpsw"
+            placeholder="Enter your Password"
+            class="in"
+            required;
+        
+          />
+          <div class="middle-btn">
+            <button class="lrg-green-btn">Update</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="tab1" class="tabcontent">
+        <h1 class="profileh1">Upcoming Appointments</h1>
+        <div class="middle-btn">
+          <h5>Here you can view your upcomming appointments.</h5>
+        </div>
+        <a href="UpcomingApps.php" target="_blank">
+          <div class="middle-btn">
+            <button class="lrg-green-btn">View</button>
+          </div>
+        </a>
+      </div>
+      <div id="tab2" class="tabcontent">
+        <h1 class="profileh1">Medical Report</h1>
+        <div class="middle-btn">
+          <h5>Here you can view your medical file.</h5>
+        </div>
+        <a href="MedicalFile.php" target="_blank">
+          <div class="middle-btn">
+            <button class="lrg-green-btn">View</button>
+          </div>
+        </a>
+      </div>
+    </div>
+    <?php include('footer.php'); ?>
+
+  </body>
+</html>

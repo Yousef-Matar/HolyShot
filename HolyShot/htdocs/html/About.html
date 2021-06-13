@@ -1,0 +1,57 @@
+<?php
+session_start(); 
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>About us</title>
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <img id="overlay" src="../img/overlay.png" alt="background overlay" />
+
+    <?php include('header.php'); ?>
+
+    <h1 class="page_title">About Us</h1>
+
+    <div class="container">
+      <div class="card">
+        <img src="../img/Edeni_El_حo2na-removebg-preview.png" alt="logo pic" />
+        <p>
+          The Clinic was established in Katameya (New Cairo) to be one of the
+          first and most prestigious medical care facilities service in the
+          district. A full fledged facility that has different specialty
+          clinics: Pediatrics, Obstetrics, Gynaecology, Ear, Nose, Throat,
+          Orthopedics, Internal medicine, Urology, Obesity management
+          (Nutrition, as well as advanced laparoscopic surgery), Plastic surgery
+          and Beauty management (Skin care, Hair Removal and Plastic filling
+          procedures). Our group of consultants were carefully selected to
+          comprise only the best in Egypt and probably around the world.
+        </p>
+        <h2>Have more questions? Contact us and meet us in person!</h2>
+        <a id="contact_button" href="../html/contact.html">Contact Us</a>
+      </div>
+    </div>
+
+    <?php include('footer.php'); ?>
+
+  </body>
+</html>

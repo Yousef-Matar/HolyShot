@@ -1,0 +1,117 @@
+<?php
+session_start(); 
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Register</title>
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/scripts.js"></script>
+  </head>
+
+  <body>
+    <img id="overlay" src="../img/overlay.png" alt="background overlay" />
+
+    <?php include('header.php'); ?>
+
+    <h1 class="page_title">Register</h1>
+
+    <div class="container">
+      <div class="card" id="RegisterForm">
+        <img src="../img/Edeni_El_حo2na-removebg-preview.png" alt="logo pic" />
+        <form action="register.php" method="post" onsubmit="return validateForm(document.getElementById('RegisterForm').id)"
+        >
+          <div class="form-signup">
+            <p>Please fill in this form to create an account.</p>
+            <hr />
+
+            <label for="fname"><b>Full Name</b></label>
+            <input
+              type="text"
+              placeholder="Enter your first name"
+              name="fname"
+              id="fname"
+              required
+            />
+
+            <label for="username"><b>User Name</b></label>
+            <input
+              type="text"
+              placeholder="Enter your user name"
+              name="username"
+              id="username"
+              required
+            />
+
+            <label for="email"><b>Email</b></label>
+            <input
+              type="text"
+              placeholder="Enter Email"
+              name="email"
+              id="email"
+              required
+            />
+
+            <label for="password"><b>Password</b></label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+              id="password"
+              required
+            />
+
+            <label for="password-confirm"><b>Confirm Password</b></label>
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              name="password-confirm"
+              id="password-confirm"
+              required
+            />
+            <hr />
+
+            <p>
+              By creating an account you agree to our
+              <a
+                href="https://www.termsandconditionsgenerator.com/live.php?token=aTTBQH05RjQfFoGbZdajSs4EnJT0Rw0t"
+                >Terms & Privacy</a
+              >.
+            </p>
+            <button type="submit"  class="registerbtn">Register</button>
+          </div>
+
+          <div class="signin">
+            <p>Already have an account? <a href="../html/login.html">Sign in</a>.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <?php include('footer.php'); ?>
+
+  </body>
+</html>
